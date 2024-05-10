@@ -1,0 +1,12 @@
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: scylladb:proxy-csi-driver-attachdetach
+subjects:
+- kind: ServiceAccount
+  name: proxy-csi-driver-controller
+  namespace: proxy-csi-driver
+roleRef:
+  kind: ClusterRole
+  name: scylladb:proxy-csi-driver-attachdetach
+  apiGroup: rbac.authorization.k8s.io
